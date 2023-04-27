@@ -1,31 +1,28 @@
-.mat-dialog-container .pokemon-details-header {
-    background-color: #f44336;
-    color: #fff;
-    padding: 16px;
-  }
-  
-  .mat-dialog-container .pokemon-details-title {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .mat-dialog-container .pokemon-details-content {
-    padding: 16px;
-  }
-  
-  .mat-dialog-container .pokemon-details-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-  }
-  /* Set the width of the dialog */
-.mat-dialog-container {
-  max-width: 300px;
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Set the height of the dialog */
-.mat-dialog-container .pokemon-details-content {
-  height: 1000px;
-  overflow: auto; /* Add scrollbars if the content overflows the height */
+.pokemon-details {
+  align-self: center;
+  width: 100%; /* or your desired width */
+  height: 1000px; /* or your desired height */
+  padding: 10px;
+  background-color: #c6ccc3;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  font-size: 24px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+.pokemon-details button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color:black;
 }
