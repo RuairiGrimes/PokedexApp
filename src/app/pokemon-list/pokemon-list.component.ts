@@ -13,6 +13,9 @@ export class PokemonListComponent implements OnInit {
   page = 1;
   totalPokemon?: number;
   dialogOpen = false;
+  pokemonHover: boolean = false; // Add this property
+  itemsPerPage: number = 20; // set items per page to 20
+  visiblePokemon: any[] = [];
 
   constructor(
     private dataService: DataService,
@@ -23,21 +26,35 @@ export class PokemonListComponent implements OnInit {
     this.getPokemon();
   }
 
-  // Get Pokemon
+  uniqueNames = new Set();
   getPokemon() {
-    this.dataService.getPokemon(12, this.page + 0)
-    .subscribe((response: any) => {
-      this.totalPokemon = response.count;
-
-      response.results.forEach((result: any) => {
-        this.dataService.getMoreData(result.name)
-        .subscribe((uniqueResponse: any) => {
-          this.pokemon.push(uniqueResponse);
+    this.dataService.getPokemon(151, 0)
+      .subscribe((response: any) => {
+        this.totalPokemon = response.count;
+        response.results.forEach((result: any) => {
+          this.dataService.getMoreData(result.name)
+            .subscribe((uniqueResponse: any) => {
+              this.pokemon.push(uniqueResponse);
+              this.updateVisiblePokemon();
+            });
         });
       });
-    });
+  }
+  updateVisiblePokemon() {
+    const startIndex = (this.page - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.visiblePokemon = this.pokemon.slice(startIndex, endIndex);
   }
 
+  
+  onPageChanged(event: any): void {
+    console.log('Page changed:', event);
+    this.page = event.page;
+    const startIndex = (this.page - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log('Visible Pokemon:', this.pokemon.slice(startIndex, endIndex));
+    this.visiblePokemon = this.pokemon.slice(startIndex, endIndex);
+  }
   // Open dialog
   openDialog(pokemon: any) {
     this.dialogOpen = true;
