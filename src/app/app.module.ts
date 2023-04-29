@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,6 +12,7 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import { PokemonDialogComponent } from './pokemon-dialog/pokemon-dialog.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -26,11 +26,11 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxPaginationModule, // Add this line to import NgxPaginationModule
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
     FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],
