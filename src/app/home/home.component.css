@@ -1,0 +1,25 @@
+.head {
+    text-align: center; 
+    padding-left: 100px;
+}
+
+.fancy-button {
+    position: relative;
+    background-color: #009505; 
+    border: none; 
+    color: white; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 24px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 12px; 
+    transition-duration: 0.4s;
+  }
+  
+  .fancy-button:hover {
+    background-color: #0f9c13; 
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); 
+  }

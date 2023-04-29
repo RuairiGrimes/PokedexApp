@@ -13,14 +13,19 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
 import { PokemonDialogComponent } from './pokemon-dialog/pokemon-dialog.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     PokemonListComponent,
     PokemonDetailsComponent,
-    PokemonDialogComponent
+    PokemonDialogComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
