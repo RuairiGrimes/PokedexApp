@@ -20,4 +20,5 @@ export class DataService {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
   }
+
 }
