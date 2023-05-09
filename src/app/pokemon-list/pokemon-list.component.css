@@ -20,6 +20,10 @@
     transition: transform 0.2s ease-in-out;
   }
   
+  .pokename {
+    text-transform: capitalize;
+  }
+  
   .pokemon-grid .box img {
     max-width: 1000px;
     display: block;
@@ -47,5 +51,6 @@
   .pokemon-grid .box .pokemon-hover {
     visibility: hidden;
   }
+
 
   
