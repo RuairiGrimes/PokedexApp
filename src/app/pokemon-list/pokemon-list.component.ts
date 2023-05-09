@@ -17,6 +17,9 @@ export class PokemonListComponent implements OnInit {
   pokemonHover: boolean = false; // Add this property
   itemsPerPage: number = 20; // set items per page to 20
   visiblePokemon: any[] = [];
+  filteredPokemonList: any[] = [];
+  allPokemon: any[] = [];
+  searchTerm: string = '';
   config: PaginationInstance = {
     id:"px1",
     itemsPerPage: 20,
@@ -34,6 +37,7 @@ export class PokemonListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPokemon();
+    this.filteredPokemonList = this.pokemon;
   }
 
   uniqueNames = new Set();
@@ -64,7 +68,6 @@ export class PokemonListComponent implements OnInit {
     this.updateVisiblePokemon();
   }
 
-  // Open dialog
   openDialog(pokemon: any) {
     this.dialogOpen = true;
     const dialogRef = this.dialog.open(PokemonDetailsComponent, {
@@ -74,4 +77,5 @@ export class PokemonListComponent implements OnInit {
       this.dialogOpen = false;
     });
   }
+
 }
