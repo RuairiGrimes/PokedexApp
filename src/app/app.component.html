@@ -1,4 +1,5 @@
 <app-header></app-header>
-<app-navbar (showHome)="showPokemonList = false" (showPokemonList)="showPokemonList = true"></app-navbar>
+<app-navbar (showHome)="showPokemonList = false" (showPokemonList)="showPokemonList = true" (searchClicked)="showSearchComponent()"></app-navbar>
 <app-home *ngIf="!showPokemonList" (showPokemonList)="showPokemonList = true"></app-home>
 <app-pokemon-list *ngIf="showPokemonList"></app-pokemon-list>
+<app-search-component *ngIf="showSearch"></app-search-component>
