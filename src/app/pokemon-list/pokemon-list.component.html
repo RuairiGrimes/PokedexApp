@@ -10,7 +10,7 @@
       (click)="openDialog(pokemon)"
       >
       <img [src]="pokemon.sprites.front_default" alt="Pokemon">
-      <h3>{{ pokemon.name }}</h3>
+      <h3 class="pokename">{{ pokemon.name }}</h3>
       <p><b>Type:</b> {{ pokemon.types[0].type.name }}</p>
       <p><b>Height:</b> {{ pokemon.height }}</p>
       <p><b>Health:</b> {{ pokemon.stats[0].base_stat }}</p>

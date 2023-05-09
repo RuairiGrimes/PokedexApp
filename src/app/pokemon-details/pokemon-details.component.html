@@ -3,18 +3,30 @@
   <button mat-icon-button (click)="close()">
     <mat-icon>x</mat-icon>
   </button>
-    <h2>{{ pokemon.name }}</h2>
-    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} sprite">
-    <p><b>Type:</b> {{ pokemon.types[0].type.name }}</p>
-    <p><b>Height:</b> {{ pokemon.height }}</p>
-    <p><b>Health:</b> {{ pokemon.stats[0].base_stat }}</p>
-    <p><b>Attack:</b>{{ pokemon.stats[1].base_stat }}</p>
-    
-    <button (click)="toggleMovesVisibility()" class="moves-button">Moves</button>
+  <h2>{{ pokemon.name }}</h2>
+  <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} sprite">
+  <p><b>Type:</b> {{ pokemon.types[0].type.name }}</p>
+  <p><b>Height:</b> {{ pokemon.height }}</p>
+  <p><b>Health:</b> {{ pokemon.stats[0].base_stat }}</p>
+  <p><b>Attack:</b>{{ pokemon.stats[1].base_stat }}</p>
+  <div class="details-grid">
+    <div *ngIf="showAdditionalInfo">
+  <p><b>Gender Rate:</b> {{ genderRate }}</p>
+  <p><b>Male Percentage:</b> {{ malePercentage }}%</p>
+  <p><b>Female Percentage:</b> {{ femalePercentage }}%</p>
+  <p><b>Habitat:</b> {{ habitat }}</p>
+  <p><b>Abilities:</b> <ng-container *ngFor="let ability of abilities; let last = last">{{ ability }}<ng-container *ngIf="!last">, </ng-container></ng-container></p>
+</div>
+  </div>
+</div>
+
+<button (click)="toggleAdditionalInfoVisibility()" class="btn_move">Additional Info</button>
+
+<div><button (click)="toggleMovesVisibility()" class="btn_move">Moves</button></div>
 
 <div *ngIf="showMoves">
   <h3>Moveset</h3>
   <ul>
-    <li *ngFor="let move of moves">{{ move }}</li>
+    <li class="movesetlist" *ngFor="let move of moves">{{ move }}</li>
   </ul>
 </div>
