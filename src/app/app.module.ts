@@ -15,6 +15,15 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SearchComponentComponent } from './search-component/search-component.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'pokemon-list', component: PokemonListComponent },
+  { path: 'pokemon-details', component: PokemonDetailsComponent },
+  { path: 'search', component: SearchComponentComponent }
+]
 
 @NgModule({
   declarations: [
@@ -35,7 +44,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent],
