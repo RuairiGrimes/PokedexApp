@@ -19,6 +19,7 @@ export class PokemonDetailsComponent implements OnInit {
   habitat!: string;
   abilities!: string[];
   showAdditionalInfo = false;
+  showGif: boolean = true;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<PokemonDetailsComponent>, private http: HttpClient) { }
 

@@ -20,6 +20,7 @@ export class PokemonListComponent implements OnInit {
   filteredPokemonList: any[] = [];
   allPokemon: any[] = [];
   searchTerm: string = '';
+  isClassicView: boolean = false;
   config: PaginationInstance = {
     id:"px1",
     itemsPerPage: 20,
@@ -62,6 +63,16 @@ export class PokemonListComponent implements OnInit {
     this.visiblePokemon = this.pokemon.slice(startIndex, endIndex);
   }
 
+  toggleGifClassic(): void {
+    this.isClassicView = !this.isClassicView;
+  }
+
+  handleError(event: any, pokemon: any): void {
+    if (!this.isClassicView) {
+      event.target.src = pokemon.sprites.front_default;
+    }
+  }
+  
   onPageChanged(event: any): void {
     console.log('Page changed:', event);
     this.config.currentPage = event;

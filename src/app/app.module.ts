@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponentComponent } from './search-component/search-component.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -44,6 +45,7 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     FormsModule,
+    MatSlideToggleModule,
     NgxPaginationModule,
     RouterModule.forRoot(routes)
   ],
