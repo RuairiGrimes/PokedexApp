@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pokedex-app';
   showPokemonList = false;
+  showSearch = false;
+
+  showSearchComponent() {
+    this.showSearch = true;
+  }
+  
 }
+
+

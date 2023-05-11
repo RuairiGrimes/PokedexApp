@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class NavbarComponent implements OnInit {
   @Output() showHome = new EventEmitter<void>();
   @Output() showPokemonList = new EventEmitter<void>();
+  @Output() searchClicked = new EventEmitter();
 
   constructor() { }
 
