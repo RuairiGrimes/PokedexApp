@@ -12,6 +12,11 @@
   text-align: center;
 }
 
+div.pokemon-details .pokemon-gif {
+  height: 100px;
+  width: 90px;
+}
+
 .button-container {
   margin-top: 2px;
   margin-bottom: 2px;

@@ -23,7 +23,7 @@ export class PokemonListComponent implements OnInit {
   isClassicView: boolean = false;
   config: PaginationInstance = {
     id:"px1",
-    itemsPerPage: 20,
+    itemsPerPage: 15,
     currentPage: 1,
     totalItems: 1000
   };

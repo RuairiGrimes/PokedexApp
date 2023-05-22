@@ -7,7 +7,7 @@
     <mat-slide-toggle [(ngModel)]="showGif">Classic</mat-slide-toggle>
   </div>
   <div class = "pokemon-details">
-  <img [src]="showGif ? 'https://projectpokemon.org/images/normal-sprite/' + pokemon.name + '.gif' : pokemon.sprites.front_default" alt="{{ pokemon.name }} sprite">
+  <img class = "pokemon-gif" [src]="showGif ? 'https://projectpokemon.org/images/normal-sprite/' + pokemon.name + '.gif' : pokemon.sprites.front_default" alt="{{ pokemon.name }} sprite">
   <p><b>Type:</b> {{ pokemon.types[0].type.name }}</p>
   <p><b>Height:</b> {{ pokemon.height }}</p>
   <p><b>Health:</b> {{ pokemon.stats[0].base_stat }}</p>
