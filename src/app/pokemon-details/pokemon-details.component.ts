@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PokemonDetailsComponent implements OnInit {
   pokemon: any;
-  moves!: string[]; // Add this line to declare the 'moves' property
+  moves!: string[]; 
   showMoves = false;
   genderRate!: number;
   malePercentage!: number;
@@ -19,12 +19,13 @@ export class PokemonDetailsComponent implements OnInit {
   habitat!: string;
   abilities!: string[];
   showAdditionalInfo = false;
+  showGif: boolean = true;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<PokemonDetailsComponent>, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.moves = [];
-    this.pokemon = this.data; // <-- make sure this is receiving the pokemon object
+    this.pokemon = this.data; 
     if (this.pokemon && this.pokemon.id) {
       this.fetchPokemonMoveset(this.pokemon.id);
       this.fetchPokemonExtraData(this.pokemon.id); 
@@ -55,7 +56,7 @@ export class PokemonDetailsComponent implements OnInit {
       this.genderRate = speciesResponse.gender_rate;
       this.habitat = speciesResponse.habitat.name;
   
-      // Calculate gender ratio
+      // Calculating the gender ratio
       this.malePercentage = this.genderRate >= 0 ? (this.genderRate / 8) * 100 : -1;
       this.femalePercentage = this.genderRate >= 0 ? 100 - this.malePercentage : -1;
   

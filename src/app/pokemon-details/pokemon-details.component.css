@@ -1,42 +1,54 @@
 .pokemon-details {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  padding: 20px;
-  position: relative;
-  width: 100%;
-  height: 1000px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  width: auto;
+  height: auto;
+  margin: 50px auto;
+  border-radius: 10px;
   font-family: 'Arial', sans-serif;
+  text-align: center;
 }
 
-.pokemon-details button,
-.btn_move button {
-  background-color: transparent;
-  border: none;
+div.pokemon-details .pokemon-gif {
+  height: 100px;
+  width: 90px;
+}
+
+.button-container {
+  margin-top: 2px;
+  margin-bottom: 2px;
+
+}
+
+.btn_move {
+  background-color: rgb(2, 143, 2);
+  border-radius: 40px;
+  border: 1px solid #888;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 14px;
   transition: transform 0.2s, background-color 0.2s;
+  margin-top: 2px;
 }
 
-.pokemon-details button:hover,
-.btn_move button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+.btn_move:hover {
+  background-color: rgb(18, 180, 3);
   cursor: pointer;
 }
 
 .pokemon-details button:active,
-.btn_move button:active {
-  transform: scale(0.5);
+.btn_move:active {
+  transform: scale(0.95);
 }
 
 .pokemon-details button {
   position: absolute;
   top: 10px;
   right: 10px;
-}
-
-.pokemon-details mat-icon {
-  font-size: 20px;
+  font-size: 14px;
   color: #888;
 }
 
@@ -51,7 +63,7 @@
 .pokemon-details img {
   width: 200px; 
   height: 200px; 
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .pokemon-details p {
@@ -65,27 +77,25 @@
   color: #333;
 }
 
-.btn_move button {
-  position: absolute;
-  bottom: 10px;
-  right: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .movesetlist {
   text-transform: capitalize;
+  padding: 15px;
+}
+
+.details-grid p {
+  margin: 0;
 }
 
 .details-grid {
-  padding-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  margin-bottom: 20px;
-  text-transform: capitalize;
-}
-.details-grid p {
-  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  width: auto;
+  height: auto;
+  margin: 50px auto;
+  border-radius: 10px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
 }
